@@ -1,6 +1,6 @@
 {
   "name": "@frontkom/starterx-quote-background",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Quote block with a background image",
   "main": "build/index.js",
   "gutenbergCloud": {
