@@ -11,12 +11,14 @@
   background-position: center;
   font-family: "poppins", Arial, sans-serif;
 
-  .quote {
+  blockquote {
+    display: block;
     background-color: rgba(0,0,0,0.5);
     color: white;
 
     width: 100%;
     min-height: 500px;
+    margin: 0;
     padding: 60px 60px;
 
     @media (min-width: 768px) {
@@ -28,20 +30,25 @@
       padding: 100px 100px;
     }
 
-    &__title {
+    p {
+      margin: 0;
       font-weight: 600;
       line-height: 32px;
       font-size: 24px;
+      font-style: normal;
       quotes: none;
     }
-    &__author {
+    cite {
+      display: block;
       font-weight: 500;
       line-height: 40px;
       font-size: 18px;
+      font-style: normal;
       letter-spacing: 0.02em;
     }
 
-    &__icon {
+    .quote__icon {
+      display: block;
       margin: 5px 0;
       &__after {
         text-align: right;

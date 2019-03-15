@@ -29,13 +29,13 @@ const BLOCK_ATTRIBUTES = {
   title: {
     type: 'array',
     source: 'children',
-    selector: '.quote__title',
+    selector: 'blockquote p',
     default: 'You can design and create, and build the most beautiful place in the world. But it takes people to make the dream a reality.',
   },
   author: {
     type: 'array',
     source: 'children',
-    selector: '.quote__author',
+    selector: 'blockquote cite',
     default: 'Walt Disney',
   },
   image: {
@@ -90,18 +90,18 @@ export const settings = {
             />
           </Toolbar>
         </BlockControls>
-        <div className="quote">
-          <p className="quote__icon quote__icon__before"><img src={ quoteOpen } /></p>
+        <blockquote>
+          <span className="quote__icon quote__icon__before"><img src={ quoteOpen } /></span>
           <RichText
-            tagName="q" className="quote__title" value={ title } placeholder={ __('Quote text') }
+            tagName="p" value={ title } placeholder={ __('Quote text') }
             onChange={ value => setAttributes({ title: value }) } formattingControls={ [] }
           />
-          <p className="quote__icon quote__icon__after"><img src={ quoteClose } /></p>
+          <span className="quote__icon quote__icon__after"><img src={ quoteClose } /></span>
           <RichText
-            tagName="p" className="quote__author" value={ author } placeholder={ __('The author') }
+            tagName="cite" value={ author } placeholder={ __('The author') }
             onChange={ value => setAttributes({ author: value }) } formattingControls={ [] }
           />
-        </div>
+        </blockquote>
       </div>
     );
   },
@@ -114,12 +114,12 @@ export const settings = {
 
     return (
       <div style={ containerStyle } { ...imageData }>
-        <div className="quote">
-          <p className="quote__icon quote__icon__before"><img src={ quoteOpen } /></p>
-          <RichText.Content tagName="q" className="quote__title" value={ title } />
-          <p className="quote__icon quote__icon__after"><img src={ quoteClose } /></p>
-          <RichText.Content tagName="p" className="quote__author" value={ author } />
-        </div>
+        <blockquote>
+          <span className="quote__icon quote__icon__before"><img src={ quoteOpen } /></span>
+          <RichText.Content tagName="p" value={ title } />
+          <span className="quote__icon quote__icon__after"><img src={ quoteClose } /></span>
+          <RichText.Content tagName="cite" value={ author } />
+        </blockquote>
       </div>
     );
   },
