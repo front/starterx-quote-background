@@ -6,6 +6,8 @@ import { i18n, editor, components } from 'wp';
 
 import quoteClose from './quote-close.svg';
 import quoteOpen from './quote-open.svg';
+
+import deprecated from './deprecated';
 import './style.scss';
 
 const { __ } = i18n;
@@ -121,4 +123,6 @@ export const settings = {
       </div>
     );
   },
+
+  deprecated,
 };
